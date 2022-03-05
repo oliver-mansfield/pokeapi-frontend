@@ -1,11 +1,16 @@
 import getAllNames from "../utility/getAllNames";
 import getDataByName from "../utility/getDataByName";
+import Image from "next/image";
 
 const Pokemon = ({ pokemonPageData }) => {
 	return (
 		<>
-			<h1>lmao</h1>
-			<h2>{pokemonPageData.name}</h2>
+			<h1>{pokemonPageData.name}</h1>
+			<Image
+				src={pokemonPageData.sprites.other.dream_world.front_default}
+				width="200"
+				height="200"
+			/>
 		</>
 	);
 };
