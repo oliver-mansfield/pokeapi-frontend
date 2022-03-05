@@ -5,14 +5,17 @@ import ListItem from "../components/ListItem";
 const List = () => {
 	const [names, setNames] = useState([]);
 
-	useEffect(async () => {
+	useEffect(() => {
 		console.log("run it");
 
-		setNames(await getAllNames());
+		async function fetchData() {
+			setNames(await getAllNames());
+		}
+		fetchData();
 	}, []);
 
 	const listItems = names.map((item, index) => {
-		return <ListItem name={item.name} index={index} />;
+		return <ListItem name={item.name} index={index} key={index} />;
 	});
 
 	return (
