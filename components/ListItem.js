@@ -16,13 +16,13 @@ const ListItem = ({ name, index } = props) => {
 		bgcircleControls.start({
 			zIndex: 9999,
 			scale: 10,
-			transition: { delay: 0.6, duration: 0.6, ease: "easeOut" },
+			transition: { delay: 0.2, duration: 0.4, ease: "easeOut" },
 		});
 
 		controls.start({
 			opacity: 0,
 			y: "10px",
-			transition: { duration: 0.6, ease: "easeOut" },
+			transition: { duration: 0.2, ease: "easeOut" },
 		});
 
 		// router.push(`/${name}`);
@@ -30,10 +30,12 @@ const ListItem = ({ name, index } = props) => {
 
 	return (
 		<motion.div className={styles.list_item} onClick={handleClick}>
-			<motion.div
-				animate={bgcircleControls}
-				className={styles.list_item__bgcircle}
-			></motion.div>
+			<div className={styles.list_item__bgcircle_container}>
+				<motion.div
+					animate={bgcircleControls}
+					className={styles.list_item__bgcircle}
+				></motion.div>
+			</div>
 			<motion.div animate={controls} className={styles.list_item__content}>
 				<p>{name}</p>
 				<div className={styles.list_item__image}>
@@ -41,8 +43,8 @@ const ListItem = ({ name, index } = props) => {
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
 							index + 1
 						}.svg`}
-						width="150"
-						height="150"
+						layout="fill"
+						objectFit="contain"
 					/>
 				</div>
 			</motion.div>
