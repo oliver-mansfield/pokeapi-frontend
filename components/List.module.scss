@@ -4,6 +4,7 @@
 	row-gap: 20px;
 	column-gap: 20px;
 	position: relative;
+	overflow: hidden;
 
 	@media (min-width: 768px) {
 		grid-template-columns: 1fr 1fr 1fr;

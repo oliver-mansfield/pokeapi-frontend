@@ -2,9 +2,13 @@
 	border: 1px solid black;
 	width: 100%;
 	background-color: white;
-}
 
-.image {
-	display: block;
-	margin: 0 auto;
+	&__text {
+		color: red;
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+	}
 }
