@@ -7,41 +7,46 @@ import styles from "./ListItem.module.scss";
 const ListItem = ({ name, index } = props) => {
 	const router = useRouter();
 	const controls = useAnimation();
+	const bgcircleControls = useAnimation();
 
 	const handleClick = (e) => {
 		console.log("clicked index" + index);
 		e.preventDefault();
 
-		controls.start({
-			"z-index": 10,
-			// position: "absolute",
-			// top: "0",
-			// left: "50%",
-			y: "-100%",
-			scale: 6,
-			transition: { duration: 1 },
+		bgcircleControls.start({
+			zIndex: 9999,
+			scale: 10,
+			transition: { delay: 0.6, duration: 0.6, ease: "easeOut" },
 		});
 
-		//z-index 10 this image
-		//tell parent to show overlay
-		//animate to top of screen
+		controls.start({
+			opacity: 0,
+			y: "10px",
+			transition: { duration: 0.6, ease: "easeOut" },
+		});
 
 		// router.push(`/${name}`);
 	};
 
 	return (
-		<div className={styles.list_item} onClick={handleClick}>
-			<p>{name}</p>
-			<motion.div animate={controls} className={styles.list_item__image}>
-				<Image
-					src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-						index + 1
-					}.svg`}
-					width="150"
-					height="150"
-				/>
+		<motion.div className={styles.list_item} onClick={handleClick}>
+			<motion.div
+				animate={bgcircleControls}
+				className={styles.list_item__bgcircle}
+			></motion.div>
+			<motion.div animate={controls} className={styles.list_item__content}>
+				<p>{name}</p>
+				<div className={styles.list_item__image}>
+					<Image
+						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
+							index + 1
+						}.svg`}
+						width="150"
+						height="150"
+					/>
+				</div>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 };
 

@@ -1,14 +1,39 @@
 .list_item {
-	border: 1px solid black;
+	// border: 3px solid black;
 	width: 100%;
-	background-color: white;
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	// background-color: white;
+	position: relative;
 
-	&__text {
-		color: red;
+	&__content {
+		z-index: 2;
+		// background-color: blue;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 
 	&__image {
 		display: flex;
 		justify-content: center;
+	}
+
+	&__bgcircle {
+		border-radius: 50%;
+		background-color: #ffffff;
+		width: 100%;
+		height: 100%;
+		border: 1px solid black;
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
