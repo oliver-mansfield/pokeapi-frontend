@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import styles from "./ListItem.module.scss";
 
 const ListItem = ({ name, index } = props) => {
 	const itemRef = useRef(name);
@@ -16,8 +17,8 @@ const ListItem = ({ name, index } = props) => {
 	};
 
 	return (
-		<div className="list-item" onClick={handleClick}>
-			<img
+		<div className={styles.list_item} onClick={handleClick}>
+			<Image
 				src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
 					index + 1
 				}.svg`}
@@ -25,19 +26,6 @@ const ListItem = ({ name, index } = props) => {
 				height="200"
 				className="image"
 			/>
-
-			<style jsx>{`
-				.list-item {
-					border: 1px solid black;
-					width: 100%;
-					background-color: white;
-				}
-
-				.image {
-					display: block;
-					margin: 0 auto;
-				}
-			`}</style>
 		</div>
 	);
 };
