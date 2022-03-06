@@ -1,9 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const ListItem = ({ name, index } = props) => {
+	const router = useRouter();
+
+	const handleClick = (e) => {
+		console.log("clicked " + name);
+		e.preventDefault();
+		router.push(`/${name}`);
+	};
+
 	return (
-		<Link href={`/${name}`}>
+		<button onClick={handleClick}>
 			<div>
 				<p>{name}</p>
 				<Image
@@ -14,7 +22,7 @@ const ListItem = ({ name, index } = props) => {
 					height="200"
 				/>
 			</div>
-		</Link>
+		</button>
 	);
 };
 

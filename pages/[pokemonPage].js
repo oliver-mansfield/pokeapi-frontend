@@ -11,6 +11,24 @@ const Pokemon = ({ pokemonPageData }) => {
 				width="200"
 				height="200"
 			/>
+			<ul>
+				{pokemonPageData.types.map((type, index) => {
+					return <li key={index}>{type.type.name}</li>;
+				})}
+			</ul>
+			<p>Weight {pokemonPageData.weight}</p>
+			<p>Height {pokemonPageData.height}</p>
+			<p>Number (ID) {pokemonPageData.id}</p>
+			<ul>
+				{pokemonPageData.stats.map((stat, index) => {
+					return (
+						<li key={index}>
+							<p>{stat.stat.name}</p>
+							<p>{stat.base_stat}</p>
+						</li>
+					);
+				})}
+			</ul>
 		</>
 	);
 };
