@@ -1,14 +1,14 @@
 .list_item {
 	// border: 3px solid black;
-	min-width: 150px;
-	min-height: 150px;
+	min-width: 120px;
+	min-height: 120px;
 	margin: 0 auto;
 	// background-color: white;
 	position: relative;
 
 	@media (min-width: 768px) {
-		min-width: 250px;
-		min-height: 250px;
+		min-width: 120px;
+		min-height: 120px;
 	}
 
 	&__content {
@@ -47,6 +47,5 @@
 		background-color: #ffffff;
 		width: 90%;
 		height: 90%;
-		border: 1px solid black;
 	}
 }

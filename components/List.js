@@ -1,6 +1,7 @@
 import getAllNames from "../utility/getAllNames";
 import { useState, useEffect } from "react";
 import ListItem from "./ListItem";
+import { motion, useAnimation } from "framer-motion";
 
 import styles from "./List.module.scss";
 
@@ -24,7 +25,12 @@ const List = () => {
 	return (
 		<>
 			<div className={styles.list_outer}>
-				<div className={styles.list}>{listItems}</div>
+				<motion.div
+					transition={{ staggerChildren: -0.1 }}
+					className={styles.list}
+				>
+					{listItems}
+				</motion.div>
 
 				{showOverlay ? <div className={styles.overlay}></div> : null}
 			</div>
