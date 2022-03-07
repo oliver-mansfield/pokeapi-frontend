@@ -2,7 +2,7 @@ import getAllNames from "../utility/getAllNames";
 import getDataByName from "../utility/getDataByName";
 import Image from "next/image";
 import styles from "../components/pokemonPage.module.scss";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Marquee from "../components/Marquee";
 
 const Pokemon = ({ pokemonPageData }) => {
