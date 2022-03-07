@@ -1,16 +1,84 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.fire {
+	background-color: #ff701f;
+}
+
+.grass {
+	background-color: #b2ffb0;
+}
+
+.poison {
+	background-color: #8159d6;
+}
+
+.normal {
+	background-color: #ffe8cd;
+}
+
+.electric {
+	background-color: #ffef5e;
+}
+
+.fighting {
+	background-color: #957966;
+}
+
+.water {
+	background-color: #3fd1ff;
+}
+
+.ice {
+	background-color: #bdefff;
+}
+
+.ground {
+	background-color: #f59d36;
+}
+
+.flying {
+	background-color: #0071b9;
+}
+
+.psychic {
+	background-color: #ff7a7a;
+}
+
+.bug {
+	background-color: #527c3e;
+}
+
+.rock {
+	background-color: #656464;
+}
+
+.ghost {
+	background-color: #766c8a;
+}
+
+.dragon {
+	background-color: #dc4046;
+}
+
+.steel {
+	background-color: #b5b5b5;
+}
+
+.fairy {
+	background-color: #ff9dfb;
 }

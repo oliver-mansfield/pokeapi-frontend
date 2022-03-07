@@ -13,7 +13,7 @@ const Pokemon = ({ pokemonPageData }) => {
 					initial={{ y: "-100%" }}
 					animate={{ y: 0 }}
 					transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
-					className={styles.background}
+					className={`${styles.background} ${pokemonPageData.types[0].type.name}`}
 				>
 					<Marquee name={pokemonPageData.name} />
 				</motion.div>
