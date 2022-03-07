@@ -1,16 +1,40 @@
 import getAllNames from "../utility/getAllNames";
 import getDataByName from "../utility/getDataByName";
 import Image from "next/image";
+import styles from "../components/pokemonPage.module.scss";
+import { motion, useAnimation } from "framer-motion";
+import Marquee from "../components/Marquee";
 
 const Pokemon = ({ pokemonPageData }) => {
 	return (
 		<>
+			<section className={styles.hero}>
+				<motion.div
+					initial={{ y: "-100%" }}
+					animate={{ y: 0 }}
+					transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
+					className={styles.background}
+				>
+					<Marquee name={pokemonPageData.name} />
+				</motion.div>
+				<motion.div
+					className={styles.hero__image_outer}
+					initial={{ y: "10%", opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ ease: "easeOut", duration: 0.5, delay: 0.4 }}
+				>
+					<div className={styles.hero__image}>
+						<Image
+							src={pokemonPageData.sprites.other.dream_world.front_default}
+							layout="fill"
+							objectFit="contain"
+						/>
+					</div>
+				</motion.div>
+			</section>
+
 			<h1>{pokemonPageData.name}</h1>
-			<Image
-				src={pokemonPageData.sprites.other.dream_world.front_default}
-				width="200"
-				height="200"
-			/>
+
 			<ul>
 				{pokemonPageData.types.map((type, index) => {
 					return <li key={index}>{type.type.name}</li>;

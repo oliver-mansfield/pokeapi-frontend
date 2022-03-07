@@ -1,0 +1,76 @@
+// .marquee {
+//   position: relative;
+//   width: 100vw;
+//   max-width: 100%;
+//   height: 206px;
+//   overflow-x: hidden;
+
+//   &__track {
+//     position: absolute;
+//     white-space: nowrap;
+//   }
+
+//   &__text {
+//     margin: 20px 0;
+//     font-size: 12vw;
+//     text-transform: uppercase;
+//     font-family: "League Gothic", sans-serif;
+//     font-style: italic;
+//     color: white;
+//   }
+// }
+
+.marquee {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+
+  &__slide {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    &slow {
+      animation: slideleft 10s linear infinite;
+    }
+
+    &mid {
+      animation: slideleft 8s linear infinite;
+    }
+
+    &fast {
+      animation: slideleft 6s linear infinite;
+    }
+  }
+
+  &__text {
+    margin: 0 50px 0 0;
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-family: "League Gothic", sans-serif;
+    font-style: italic;
+    color: white;
+    // animation: fadein 1s 2s;
+  }
+}
+
+@keyframes slideleft {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
