@@ -99,7 +99,7 @@ const Pokemon = ({ pokemonPageData }) => {
 				>
 					{pokemonPageData.types.map((type, index) => {
 						return (
-							<div className={styles.textcontainer}>
+							<div className={styles.textcontainer} key={index}>
 								<motion.li
 									className={type.type.name}
 									key={index}
@@ -114,7 +114,6 @@ const Pokemon = ({ pokemonPageData }) => {
 			</section>
 			<section className={styles.statsone}>
 				<motion.div
-					variants={container}
 					variants={container}
 					initial="hidden"
 					whileInView="show"
@@ -144,7 +143,6 @@ const Pokemon = ({ pokemonPageData }) => {
 
 			<section className={styles.statstwo}>
 				<motion.div
-					variants={container}
 					variants={container}
 					initial="hidden"
 					whileInView="show"

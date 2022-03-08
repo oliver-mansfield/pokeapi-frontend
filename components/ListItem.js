@@ -38,7 +38,7 @@ const ListItem = ({ name, index } = props) => {
 
 		setTimeout(() => {
 			router.push(`/${name}`);
-		}, 500);
+		}, 1000);
 	};
 
 	return (
