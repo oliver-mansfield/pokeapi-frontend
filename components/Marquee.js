@@ -3,77 +3,81 @@ import { motion } from "framer-motion";
 import styles from "./Marquee.module.scss";
 
 const Marquee = (props) => {
-	const marqueeVariants = {
-		animate: {
-			opacity: [0, 1],
+  const variants = {
+    animate: {
+      opacity: [0, 1],
 
-			transition: {
-				opacity: {
-					duration: 0.4,
-					delay: 1,
-				},
-			},
-		},
-	};
+      transition: {
+        opacity: {
+          duration: 0.4,
+          delay: 1,
+        },
+      },
+    },
+  };
 
-	return (
-		<motion.div variants={marqueeVariants} animate="animate">
-			<div className={styles.marquee}>
-				<div className={styles.marquee__slideslow}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-				<div className={styles.marquee__slideslow}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-			</div>
-			<div className={styles.marquee}>
-				<div className={styles.marquee__slidemid}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-				<div className={styles.marquee__slidemid}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-			</div>
-			<div className={styles.marquee}>
-				<div className={styles.marquee__slidefast}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-				<div className={styles.marquee__slidefast}>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-					<span className={styles.marquee__text}>{props.name}</span>
-				</div>
-			</div>
-		</motion.div>
-	);
+  return (
+    <motion.div
+      variants={variants}
+      animate="animate"
+      className={styles.marqueewrapper}
+    >
+      <div className={styles.marquee}>
+        <div className={styles.marquee__slideslow}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+        <div className={styles.marquee__slideslow}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+      </div>
+      <div className={styles.marquee}>
+        <div className={styles.marquee__slidemid}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+        <div className={styles.marquee__slidemid}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+      </div>
+      <div className={styles.marquee}>
+        <div className={styles.marquee__slidefast}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+        <div className={styles.marquee__slidefast}>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+          <span className={styles.marquee__text}>{props.name}</span>
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 export default Marquee;
