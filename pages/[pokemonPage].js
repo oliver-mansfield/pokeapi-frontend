@@ -10,7 +10,7 @@ const Pokemon = ({ pokemonPageData }) => {
 		show: {
 			transition: {
 				staggerChildren: 0.05,
-				delayChildren: 0.2,
+				delayChildren: 0.3,
 			},
 		},
 	};
@@ -91,6 +91,19 @@ const Pokemon = ({ pokemonPageData }) => {
 			</section>
 
 			<section className={styles.intro}>
+				<motion.div
+					className={styles.intro__numberouter}
+					initial={{ y: "30%", opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{
+						type: "spring",
+						stiffness: 150,
+						duration: 0.8,
+						delay: 1,
+					}}
+				>
+					<span className={styles.intro__number}>#{pokemonPageData.id}</span>
+				</motion.div>
 				<span className={styles.intro__label}>NAME</span>
 
 				<div className={styles.textcontainer}>
@@ -183,8 +196,6 @@ const Pokemon = ({ pokemonPageData }) => {
 					})}
 				</motion.div>
 			</section>
-
-			<p>Number (ID) {pokemonPageData.id}</p>
 		</>
 	);
 };
