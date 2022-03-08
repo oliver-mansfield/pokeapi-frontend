@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../components/Home.module.scss";
 import List from "../components/List";
+import { motion } from "framer-motion";
 
 export default function Home() {
 	return (
@@ -12,9 +13,19 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className={styles.logo}>
+			<motion.div
+				className={styles.logo}
+				initial={{ y: "-100%" }}
+				animate={{ y: 0 }}
+				transition={{
+					type: "spring",
+					stiffness: 100,
+					duration: 0.5,
+					delay: 1,
+				}}
+			>
 				<Image src="/pokemon-logo.svg" width="300" height="150" />
-			</div>
+			</motion.div>
 
 			<main>
 				<List />
