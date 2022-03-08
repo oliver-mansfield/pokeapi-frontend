@@ -26,38 +26,6 @@ const Pokemon = ({ pokemonPageData }) => {
 		},
 	};
 
-	const fadeLabel = {
-		hidden: {
-			opacity: 0,
-			y: "-100%",
-		},
-		show: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 0.3,
-				ease: "easeOut",
-				delay: 0.1,
-			},
-		},
-	};
-
-	const slideUp = {
-		hidden: {
-			opacity: 0,
-			y: "100%",
-		},
-		show: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 0.3,
-				ease: "easeOut",
-				delay: 1,
-			},
-		},
-	};
-
 	return (
 		<>
 			<section className={styles.hero}>

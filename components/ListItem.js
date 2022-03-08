@@ -8,6 +8,18 @@ const ListItem = ({ name, index } = props) => {
 	const controls = useAnimation();
 	const bgcircleControls = useAnimation();
 
+	const item = {
+		hidden: { y: "20px", opacity: 0 },
+		show: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.2,
+				ease: "easeOut",
+			},
+		},
+	};
+
 	const handleClick = (e) => {
 		console.log("clicked index" + index);
 		e.preventDefault();
@@ -34,6 +46,7 @@ const ListItem = ({ name, index } = props) => {
 			className={styles.list_item}
 			onClick={handleClick}
 			whileTap={{ scale: 0.9 }}
+			variants={item}
 			//transition={{
 			//     delay: 0.1,
 			//     duration: 0.2,
