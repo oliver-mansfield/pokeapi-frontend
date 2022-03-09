@@ -1,38 +1,47 @@
-import getAllNames from "../utility/getAllNames";
+// import getAllNames from "../utility/getAllNames";
 import { useState, useEffect } from "react";
 import ListItem from "./ListItem";
 import { motion } from "framer-motion";
 
 import styles from "./List.module.scss";
 
-const List = () => {
+const List = (props) => {
 	const [names, setNames] = useState([]);
 	const [isMobile, setIsMobile] = useState([]);
 
-	useEffect(() => {
-		console.log("run it");
+	// useEffect(() => {
+	// 	console.log("run it");
 
-		async function fetchData() {
-			setNames(await getAllNames());
-		}
-		fetchData();
-		setIsMobile(window.innerWidth < 768);
-	}, []);
+	// 	// async function fetchData() {
+	// 	// 	setNames(await getAllNames());
+	// 	// }
+	// 	// fetchData();
+	// 	setIsMobile(window.innerWidth < 768);
+	// }, []);
 
-	let container;
+	// let container;
 
-	if (!isMobile) {
-		container = {
-			show: {
-				transition: {
-					staggerChildren: 0.05,
-					delayChildren: 0.3,
-				},
+	// if (!isMobile) {
+	// 	container = {
+	// 		show: {
+	// 			transition: {
+	// 				staggerChildren: 0.05,
+	// 				delayChildren: 0.3,
+	// 			},
+	// 		},
+	// 	};
+	// }
+
+	const container = {
+		show: {
+			transition: {
+				staggerChildren: 0.05,
+				delayChildren: 0.3,
 			},
-		};
-	}
+		},
+	};
 
-	const listItems = names.map((item, index) => {
+	const listItems = props.names.map((item, index) => {
 		return <ListItem name={item.name} index={index} key={index} />;
 	});
 

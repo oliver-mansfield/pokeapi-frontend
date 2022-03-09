@@ -8,24 +8,36 @@ const ListItem = ({ name, index } = props) => {
 	const controls = useAnimation();
 	const bgcircleControls = useAnimation();
 
-	let item = {};
+	// let item = {};
 
-	const isMobile = window.innerWidth < 768;
-	console.log(isMobile);
+	// const isMobile = window.innerWidth < 768;
+	// console.log(isMobile);
 
-	if (!isMobile) {
-		item = {
-			hidden: { y: "20px", opacity: 0 },
-			show: {
-				y: 0,
-				opacity: 1,
-				transition: {
-					duration: 0.2,
-					ease: "easeOut",
-				},
+	// if (!isMobile) {
+	// 	item = {
+	// 		hidden: { y: "20px", opacity: 0 },
+	// 		show: {
+	// 			y: 0,
+	// 			opacity: 1,
+	// 			transition: {
+	// 				duration: 0.2,
+	// 				ease: "easeOut",
+	// 			},
+	// 		},
+	// 	};
+	// }
+
+	const item = {
+		hidden: { y: "20px", opacity: 0 },
+		show: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.2,
+				ease: "easeOut",
 			},
-		};
-	}
+		},
+	};
 
 	const handleClick = (e) => {
 		console.log("clicked index" + index);

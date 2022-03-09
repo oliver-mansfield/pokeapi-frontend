@@ -3,8 +3,9 @@ import Image from "next/image";
 import styles from "../components/Home.module.scss";
 import List from "../components/List";
 import { motion } from "framer-motion";
+import getAllNames from "../utility/getAllNames";
 
-export default function Home() {
+export default function Home(props) {
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -28,8 +29,16 @@ export default function Home() {
 			</motion.div>
 
 			<main>
-				<List />
+				<List names={props.pokemonData} />
 			</main>
 		</div>
 	);
+}
+
+export async function getStaticProps(context) {
+	// const pokemonData = await getDataByName(context.params.pokemonPage);
+	const pokemonData = await getAllNames();
+	return {
+		props: { pokemonData },
+	};
 }
