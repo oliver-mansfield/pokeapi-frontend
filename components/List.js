@@ -36,7 +36,7 @@ const List = (props) => {
 		show: {
 			transition: {
 				staggerChildren: 0.05,
-				delayChildren: 0.3,
+				delayChildren: 0.6,
 			},
 		},
 	};

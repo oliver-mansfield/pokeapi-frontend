@@ -22,7 +22,7 @@ export default function Home(props) {
 					type: "spring",
 					stiffness: 100,
 					duration: 0.5,
-					delay: 1,
+					delay: 0.3,
 				}}
 			>
 				<Image src="/pokemon-logo.svg" width="300" height="150" />
