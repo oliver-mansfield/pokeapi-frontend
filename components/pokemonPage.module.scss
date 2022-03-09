@@ -223,10 +223,12 @@
 		color: #ff7a7a;
 		padding: 10px 20px;
 		display: inline-block;
+		transition: 0.3s;
 
 		&:hover {
 			background-color: #ff7a7a;
 			color: #ffffff;
+			transition: 0.3s;
 		}
 	}
 }

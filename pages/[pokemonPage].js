@@ -164,7 +164,7 @@ const Pokemon = ({ pokemonPageData }) => {
 				</motion.div>
 
 				<motion.div className={styles.back} whileTap={{ scale: 0.95 }}>
-					<Link href="/">&#8592; Back to Home Page</Link>
+					<Link href="/">Back to Home Page</Link>
 				</motion.div>
 			</section>
 		</>
