@@ -213,6 +213,24 @@
 	//   border: 1px solid black;
 }
 
+.back {
+	a {
+		font-family: "Roboto", sans-serif;
+		font-size: 1rem;
+		font-weight: bold;
+		margin-top: 20px;
+		border: 2px solid #ff7a7a;
+		color: #ff7a7a;
+		padding: 10px 20px;
+		display: inline-block;
+
+		&:hover {
+			background-color: #ff7a7a;
+			color: #ffffff;
+		}
+	}
+}
+
 .ut-margin-bottom-small {
 	margin-bottom: 20px;
 }

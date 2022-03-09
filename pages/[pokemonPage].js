@@ -1,6 +1,7 @@
 import getAllNames from "../utility/getAllNames";
 import getDataByName from "../utility/getDataByName";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../components/pokemonPage.module.scss";
 import { motion } from "framer-motion";
 import Marquee from "../components/Marquee";
@@ -160,6 +161,10 @@ const Pokemon = ({ pokemonPageData }) => {
 							</div>
 						);
 					})}
+				</motion.div>
+
+				<motion.div className={styles.back} whileTap={{ scale: 0.95 }}>
+					<Link href="/">&#8592; Back to Home Page</Link>
 				</motion.div>
 			</section>
 		</>
