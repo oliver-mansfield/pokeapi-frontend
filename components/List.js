@@ -21,23 +21,7 @@ const List = () => {
 
 	let container;
 
-	if (isMobile) {
-		container = {
-			hidden: {
-				opacity: 0,
-				y: "40px",
-			},
-			show: {
-				opacity: 1,
-				y: 0,
-				transition: {
-					ease: "easeOut",
-					delay: 0.5,
-					duration: 0.5,
-				},
-			},
-		};
-	} else {
+	if (!isMobile) {
 		container = {
 			show: {
 				transition: {
